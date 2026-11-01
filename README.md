@@ -58,16 +58,18 @@ Aura digitaliza todo el flujo, con evidencia y estadísticas en tiempo real:
   módulo, para que cada cambio respete el estilo del código existente.
 
 ## Números del repositorio
-159 archivos PHP en `app/` · 99 archivos de pruebas · 786 commits entre agosto de 2025 y octubre de 2026.
+159 archivos PHP en `app/` · 99 archivos de pruebas, con pruebas de rendimiento. Desarrollado entre agosto de 2025 y octubre de 2026.
 
 ## Resultados
 Usado en eventos reales de la Universidad de La Guajira — cientos de asistentes registrados
 por QR, con **~96 % de registro digital** y reportes generados en el momento.
 
 ## Mi rol
-Proyecto en equipo de varias personas: 374 de los 786 commits son míos. Diseño y desarrollo
-**full-stack**: arquitectura multi-sede, backend en Laravel, las islas de React para estadísticas,
-generación de PDF, el flujo de QR y el módulo de cumplimiento de datos.
+Proyecto en equipo. Mi parte: las **estadísticas** (gráficas con React y Recharts, y su configuración),
+el flujo de **registro por QR** y los enlaces cortos, el **consentimiento de tratamiento de datos**
+(Ley 1581), el cambio de contraseña obligatorio, la landing, las pruebas y las decisiones documentadas.
+La arquitectura multi-sede, los PDF por coordenadas, la importación y el calendario fueron trabajo del
+equipo, sobre todo de otro desarrollador.
 
 ---
 
