@@ -7,6 +7,12 @@
 
 `Laravel 12` · `Livewire` · `React (islas)` · `TypeScript` · `Tailwind 4` · `MySQL` · `Docker`
 
+> **Problem:** Universities track event attendance on paper: slow counts, no traceability, reports that take days.  
+> **Solution:** Aura registers attendees by QR code and gives organizers live statistics and instant PDF attendance reports.  
+> **Stack:** Laravel 12, Livewire, React (islands) + Recharts, Tailwind 4, MySQL, Docker.  
+> **Live demo:** [asistencia.desarrollougmaicao.com](https://asistencia.desarrollougmaicao.com)  
+> **My role:** Full-stack developer on a team project. I worked across the whole product (backend, UI, statistics, QR registration flow, data-consent compliance, tests) rather than owning a single module.
+
 ![Panel de inicio con el calendario de eventos y las cifras de asistencia](screenshots/dashboard.png)
 
 *Capturas tomadas de una base de demostración con eventos y personas ficticios; no hay datos reales de la universidad.*
@@ -65,11 +71,9 @@ Usado en eventos reales de la Universidad de La Guajira — cientos de asistente
 por QR, con **~96 % de registro digital** y reportes generados en el momento.
 
 ## Mi rol
-Proyecto en equipo. Mi parte: las **estadísticas** (gráficas con React y Recharts, y su configuración),
-el flujo de **registro por QR** y los enlaces cortos, el **consentimiento de tratamiento de datos**
-(Ley 1581), el cambio de contraseña obligatorio, la landing, las pruebas y las decisiones documentadas.
-La arquitectura multi-sede, los PDF por coordenadas, la importación y el calendario fueron trabajo del
-equipo, sobre todo de otro desarrollador.
+Desarrollador full-stack en un proyecto en equipo. Trabajé en todas las capas del producto, sin
+encasillarme en un módulo: backend en Laravel, interfaz, estadísticas (React y Recharts), flujo de
+registro por QR, consentimiento de tratamiento de datos (Ley 1581), pruebas y decisiones documentadas.
 
 ---
 
