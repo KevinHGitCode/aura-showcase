@@ -71,7 +71,7 @@ Usado en eventos reales de la Universidad de La Guajira — cientos de asistente
 por QR, con **~96 % de registro digital** y reportes generados en el momento.
 
 ## Mi rol
-Desarrollador full-stack en un proyecto en equipo. Trabajé en todas las capas del producto, sin
+Desarrollador full-stack en un proyecto en equipo, junto a Daniel Sierra ([LinkedIn](https://www.linkedin.com/in/daniel-sierra-44262a3b6)) y otros integrantes del semillero. Trabajé en todas las capas del producto, sin
 encasillarme en un módulo: backend en Laravel, interfaz, estadísticas (React y Recharts), flujo de
 registro por QR, consentimiento de tratamiento de datos (Ley 1581), pruebas y decisiones documentadas.
 
@@ -81,6 +81,6 @@ registro por QR, consentimiento de tratamiento de datos (Ley 1581), pruebas y de
 > entrevista técnica o bajo pedido. Este repositorio es el *case study*; el demo en vivo está
 > arriba.
 
-**Contacto:** [GitHub](https://github.com/KevinHGitCode) · kevinhafiddiazgarcia@gmail.com
+**Contacto:** [GitHub](https://github.com/KevinHGitCode) · [LinkedIn](https://www.linkedin.com/in/kevin-diaz-garcia-846999240/) · [Instagram](https://www.instagram.com/kevin.hdiaz/) · kevinhafiddiazgarcia@gmail.com
 
 <sub>© 2026 Kevin Díaz. All rights reserved. Text and screenshots may not be reused without permission. University and SIIS2 logos belong to their respective owners.</sub>
