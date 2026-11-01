@@ -83,4 +83,4 @@ registro por QR, consentimiento de tratamiento de datos (Ley 1581), pruebas y de
 
 **Contacto:** [GitHub](https://github.com/KevinHGitCode) · kevinhafiddiazgarcia@gmail.com
 
-<sub>© 2026 Kevin Díaz. All rights reserved. Text and screenshots may not be reused without permission. University, SIIS2 and school logos belong to their respective owners.</sub>
+<sub>© 2026 Kevin Díaz. All rights reserved. Text and screenshots may not be reused without permission. University and SIIS2 logos belong to their respective owners.</sub>
