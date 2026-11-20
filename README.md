@@ -1,86 +1,87 @@
-# 🎯 Aura — Control de asistencia por QR
+# 🎯 Aura — QR attendance control
 
-> Sistema web para **crear eventos, registrar asistentes con código QR y obtener
-> estadísticas y reportes al instante.** En uso en la **Universidad de La Guajira**.
+🇬🇧 English · 🇪🇸 [Español](README.es.md)
 
-🔗 **Demo en vivo:** [asistencia.desarrollougmaicao.com](https://asistencia.desarrollougmaicao.com)
+> A web system to **create events, check attendees in with a QR code and get statistics and reports instantly.**
+> In use at **Universidad de La Guajira**.
 
-`Laravel 12` · `Livewire` · `React (islas)` · `TypeScript` · `Tailwind 4` · `MySQL` · `Docker`
+🔗 **Live demo:** [asistencia.desarrollougmaicao.com](https://asistencia.desarrollougmaicao.com)
 
-> **Problem:** Universities track event attendance on paper: slow counts, no traceability, reports that take days.  
-> **Solution:** Aura registers attendees by QR code and gives organizers live statistics and instant PDF attendance reports.  
-> **Stack:** Laravel 12, Livewire, React (islands) + Recharts, Tailwind 4, MySQL, Docker.  
-> **Live demo:** [asistencia.desarrollougmaicao.com](https://asistencia.desarrollougmaicao.com)  
+`Laravel 12` · `Livewire` · `React (islands)` · `TypeScript` · `Tailwind 4` · `MySQL` · `Docker`
+
+> **Problem:** Universities track event attendance on paper: slow counts, no traceability, reports that take days.
+> **Solution:** Aura registers attendees by QR code and gives organizers live statistics and instant PDF attendance reports.
+> **Stack:** Laravel 12, Livewire, React (islands) + Recharts, Tailwind 4, MySQL, Docker.
+> **Live demo:** [asistencia.desarrollougmaicao.com](https://asistencia.desarrollougmaicao.com)
 > **My role:** Full-stack developer on a team project. I worked across the whole product (backend, UI, statistics, QR registration flow, data-consent compliance, tests) rather than owning a single module.
 
-![Panel de inicio con el calendario de eventos y las cifras de asistencia](screenshots/dashboard.png)
+![Home dashboard with the events calendar and attendance figures](screenshots/dashboard.png)
 
-*Capturas tomadas de una base de demostración con eventos y personas ficticios; no hay datos reales de la universidad.*
+*Screenshots come from a demo database with fictional events and people; there is no real university data.*
 
 ---
 
-## El problema
-Las universidades registran la asistencia a eventos (charlas, talleres, actos) de forma
-manual: listas en papel, conteos a mano, cero trazabilidad y reportes que tardan días.
-No hay evidencia confiable ni estadísticas para tomar decisiones.
+## The problem
+Universities record attendance at events (talks, workshops, ceremonies) by hand: paper lists, manual
+counts, no traceability, and reports that take days. There is no reliable evidence or statistics to
+base decisions on.
 
-## La solución
-Aura digitaliza todo el flujo, con evidencia y estadísticas en tiempo real:
+## The solution
+Aura digitizes the whole flow, with evidence and real-time statistics:
 
-- **📅 Gestión de eventos** — creación, cierre y administración de eventos por sede, con calendario.
-- **📲 Registro por QR** — el asistente escanea un código, escribe su documento y confirma; sin
-  filas ni papel. Captura datos demográficos (programa, tipo de participante, dependencia).
-- **📊 Estadísticas en vivo** — asistencias, participantes y eventos, con gráficas
-  interactivas y comparación entre eventos.
-- **📄 Reportes en PDF** — actas de asistencia generadas al instante.
-- **🏢 Multi-sede** — aislamiento de datos por sede desde la arquitectura.
-- **📥 Importación masiva** — carga asíncrona de participantes con revisión previa.
-- **🔔 Notificaciones** in-app y por correo · **🛡️ Roles y permisos** (usuario, administrador y superadministrador).
+- **📅 Event management** — create, close and manage events by campus, with a calendar.
+- **📲 QR check-in** — the attendee scans a code, types their ID number and confirms; no queues, no paper.
+  It captures demographic data (program, participant type, department).
+- **📊 Live statistics** — attendance, participants and events, with interactive charts and
+  comparison between events.
+- **📄 PDF reports** — attendance records generated instantly.
+- **🏢 Multi-campus** — data isolation per campus built into the architecture.
+- **📥 Bulk import** — asynchronous participant upload with a review step.
+- **🔔 Notifications** in-app and by email · **🛡️ Roles and permissions** (user, admin and super admin).
 
-## Capturas
+## Screenshots
 
 | | |
 |---|---|
-| ![Detalle de un evento con su código QR](screenshots/evento.png) | ![Registro del asistente](screenshots/registro.png) |
-| *El evento genera su QR para descargar y compartir.* | *El asistente se registra con su documento y acepta el tratamiento de datos.* |
+| ![Event detail with its QR code](screenshots/evento.png) | ![Attendee check-in](screenshots/registro.png) |
+| *Each event generates its own QR to download and share.* | *The attendee checks in with their ID number and accepts the data-processing terms.* |
 
-![Estadísticas por asistencias](screenshots/est-asistencias.png)
+![Attendance statistics](screenshots/est-asistencias.png)
 
-*Estadísticas: asistencias por estamento y por programa académico, con filtros por fecha y por evento.*
+*Statistics: attendance by participant type and by academic program, with filters by date and by event.*
 
-## Decisiones técnicas destacadas
-- **Arquitectura multi-sede** con aislamiento de datos por *scope* (un servicio central
-  garantiza que cada sede solo ve lo suyo).
-- **Islas de React sobre Laravel** — el backend sirve HTML rápido (bueno para carga y SEO)
-  y las secciones interactivas (estadísticas) montan componentes React puntuales con Recharts.
-- **PDF con mapeo de coordenadas** — las actas se rellenan sobre plantillas oficiales.
-- **Cumplimiento de datos (Ley 1581)** — consentimiento persistido (fecha, IP, versión de
-  la política) en el registro por QR, ya que se manejan datos de personas.
-- **Importación en dos pasos** — la carga masiva guarda primero en una tabla intermedia y se revisa
-  antes de confirmar, para no ensuciar la base con filas erróneas.
-- **Suite de pruebas amplia** — 99 archivos de pruebas, incluidas pruebas de rendimiento de las
-  páginas y de las estadísticas.
-- **Instrucciones por carpeta para el trabajo con IA** — convenciones escritas (`CLAUDE.md`) por
-  módulo, para que cada cambio respete el estilo del código existente.
+## Key technical decisions
+- **Multi-campus architecture** with data isolation by scope (a central service guarantees that each
+  campus only sees its own data).
+- **React islands on Laravel** — the backend serves fast HTML (good for load time and SEO) and the
+  interactive sections (statistics) mount specific React components with Recharts.
+- **PDF coordinate mapping** — attendance records are filled in on official templates.
+- **Data compliance (Colombian Law 1581)** — consent stored (date, IP, policy version) at QR
+  check-in, since personal data is handled.
+- **Two-step import** — bulk uploads go to a staging table first and are reviewed before they are
+  confirmed, so bad rows never pollute the database.
+- **Broad test suite** — 99 test files, including performance tests for the pages and the statistics.
+- **Per-folder instructions for AI-assisted work** — written conventions (`CLAUDE.md`) per module,
+  so every change respects the style of the existing code.
 
-## Números del repositorio
-159 archivos PHP en `app/` · 99 archivos de pruebas, con pruebas de rendimiento. Desarrollado entre agosto de 2025 y octubre de 2026.
+## Repository numbers
+159 PHP files in `app/` · 99 test files, including performance tests. Built between August 2025 and
+October 2026.
 
-## Resultados
-Usado en eventos reales de la Universidad de La Guajira — cientos de asistentes registrados
-por QR, con **~96 % de registro digital** y reportes generados en el momento.
+## Results
+Used at real events at Universidad de La Guajira — hundreds of attendees checked in by QR, with
+**~96% digital check-in** and reports generated on the spot.
 
-## Mi rol
-Desarrollador full-stack en un proyecto en equipo, junto a Daniel Sierra ([LinkedIn](https://www.linkedin.com/in/daniel-sierra-44262a3b6)) y otros integrantes del semillero. Trabajé en todas las capas del producto, sin
-encasillarme en un módulo: backend en Laravel, interfaz, estadísticas (React y Recharts), flujo de
-registro por QR, consentimiento de tratamiento de datos (Ley 1581), pruebas y decisiones documentadas.
+## My role
+Full-stack developer on a team project, alongside Daniel Sierra ([LinkedIn](https://www.linkedin.com/in/daniel-sierra-44262a3b6)) and other members of the research group. I worked across every layer of the product
+rather than owning a single module: Laravel backend, UI, statistics (React and Recharts), the QR
+check-in flow, data-processing consent (Law 1581), tests and documented decisions.
 
 ---
 
-> 🔒 **Código fuente privado** (es un producto en uso). Disponible para revisión en una
-> entrevista técnica o bajo pedido. Este repositorio es el *case study*; el demo en vivo está
-> arriba.
+> 🔒 **Source code is private** (it is a product in use). Available for review in a technical
+> interview or on request. This repository is the case study; the live demo is above.
 
-**Contacto:** [GitHub](https://github.com/KevinHGitCode) · [LinkedIn](https://www.linkedin.com/in/kevin-diaz-garcia-846999240/) · [Instagram](https://www.instagram.com/kevin.hdiaz/) · kevinhafiddiazgarcia@gmail.com
+**Contact:** [GitHub](https://github.com/KevinHGitCode) · [LinkedIn](https://www.linkedin.com/in/kevin-diaz-garcia-846999240/) · [Instagram](https://www.instagram.com/kevin.hdiaz/) · kevinhafiddiazgarcia@gmail.com
 
 <sub>© 2026 Kevin Díaz. All rights reserved. Text and screenshots may not be reused without permission. University and SIIS2 logos belong to their respective owners.</sub>
